@@ -1,7 +1,8 @@
 # resume
-personal resume
-right now it's a place to hold the pdf, but!
+personal resume repository
 
-the site will be build upon that design.
+### Designed in XD | (will) code in VS
 
-please look forward to it 🙇‍♂️
+Right now only a pdf lives here, for quick use, but! the site will come.
+
+Please look forward to it 🙇‍♂️
