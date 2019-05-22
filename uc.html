@@ -54,27 +54,265 @@
         font-weight: 500;
       }
 
-      *[role="button"] {
-        display: inline-block;
-        padding: 0.25em 1.5em;
-        border: 0.0625em solid var(--yellow);
-        color: var(--yellow);
-        font-size: 0.875em;
-        font-weight: 400;
-        border-radius: 1em;
-        text-transform: uppercase;
-      }
-      *[role="button"]:hover {
-        background: var(--yellow);
-        color: var(--prim-color);
-      }
-
       a,
       a:visited {
         text-decoration: none;
       }
 
+      .info {
+        background: var(--prim-color);
+        padding: 1.25em 0;
+        color: var(--dark-text);
+      }
+
+      .objective h2::before,
+      .languages h2::before,
+      .interests h2::before {
+        content: ">> ";
+      }
+
+      /* ======================================= */
+      /* ========= SMALL SCREEN DESIGN ========= */
+      /* ======================================= */
+      /* basic layout info will apply to big screen */
+
+      .info,
+      .basic {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .basic {
+        grid-column: 1/3;
+        grid-row: 1/3;
+      }
+
+      .photo-wrap {
+        display: block;
+        width: 3em;
+        height: 3em;
+        border-radius: 3em 3em 3em 0;
+        overflow: hidden;
+        transform: rotate(-45deg);
+        margin: 0 auto;
+        grid-column: 1/3;
+      }
+
+      .photo-wrap img {
+        transform: rotate(45deg);
+        height: 3.8em;
+        width: 3.8em;
+        left: -0.7em;
+        position: relative;
+      }
+
+      .name {
+        text-transform: uppercase;
+        word-spacing: -0.4em;
+        font-weight: 300;
+        letter-spacing: 0.123em;
+        margin: 0.625em auto 0;
+        padding-right: 2.3em;
+        text-align: center;
+        font-size: 1.5em;
+        grid-column: 1/3;
+      }
+
+      .thin {
+        font-weight: 300;
+      }
+
+      .firstName {
+        font-weight: 700;
+      }
+
+      .occupation {
+        color: #fcfcfc;
+        font-size: 1em;
+        text-transform: uppercase;
+        word-spacing: -0.3em;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        margin: 0 auto;
+        padding-left: 8.35em;
+        grid-column: 1/3;
+      }
+
+      /* portfolio button */
+      *[role="button"] {
+        display: inline-block;
+        padding: 0.406em 0.9em;
+        color: var(--dark-text);
+        background: var(--yellow);
+        font-size: 1em;
+        font-weight: 400;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        margin: 1.5625em 0 2.9375em 2.5em;
+        grid-column: 2/3;
+        grid-row: 4/5;
+      }
+      *[role="button"]:hover {
+        color: var(--prim-color);
+      }
+
+      .contact {
+        grid-column: 2/3;
+        grid-row: 5/6;
+        margin-left: 2.5em;
+      }
+
+      .contact a,
+      .contact a:visited {
+        color: var(--dark-text);
+        display: block;
+        margin: 0.1875em 0 0;
+      }
+
+      .social-media {
+        grid-column: 2/3;
+        margin-left: 2.5em;
+        min-width: 7.5em;
+        position: relative;
+        top: -4.8em;
+      }
+
+      .social-media a img {
+        width: 1.5em;
+        height: 1.5em;
+        margin-right: 0.5em;
+      }
+      .social-media a:hover img {
+        transform: rotate(180deg);
+        position: relative;
+      }
+
+      .objective {
+        grid-column: 1/3;
+        grid-row: 1/4;
+        max-width: 17.4em;
+        margin: 13.35em 0 -5em 3em;
+        font-size: 0.625em;
+      }
+      /* just cause I'm picky like that */
+      @media screen and (max-width: 350px) {
+        .objective {
+          margin-left: 1em;
+          max-width: 15em;
+        }
+      }
+
+      .objective h2 {
+        font-size: 1.6em;
+      }
+
+      .objective p {
+        margin-top: 0.66666em;
+        line-height: 1.5em;
+      }
+
+      .languages,
+      .interests {
+        display: none;
+      }
+
+      /* ======================================= */
+      /* ========== BIG SCREEN DESIGN ========== */
+      /* ======================================= */
+
       @media screen and (min-width: 415px) {
+
+        /* reset style from small screen */
+        .name,
+        .occupation,
+        .photo-wrap,
+        .photo-wrap img,
+        .contact,
+        .contact a,
+        .contact a:visited,
+        .social-media,
+        .objective {
+          padding: initial;
+          transform: unset;
+          position: initial;
+          float: initial;
+        }
+        .languages,
+        .interests {
+          display: block;
+        }
+        .contact,
+        .social-media {
+          margin: initial;
+        }
+        .objective {
+          width: initial;
+          font-size: initial;
+          margin: initial;
+        }
+        .objective h2 {
+          font-size: 1em;
+        }
+
+        /* ======================================= */
+        /* ========== RESPONSIVE TO 600 ========== */
+        /* ======================================= */
+
+        @media screen and (max-width: 600px) {
+          body {
+            grid-template-columns: minmax(5em, 1fr) minmax(5em, 1fr);
+            font-size: 1em !important;
+          }
+          .info {
+            grid-column: 1/2;
+          }
+          .info > div {
+            margin-right: 1em;
+            margin-left: 1em;
+            width: auto;
+          }
+
+          .info > div p,
+          li {
+            font-size: 0.875em;
+          }
+
+          div.basic{
+            text-align: center;
+          }
+
+          .history-line {
+            display: none;
+          }
+          .experience > div::before {
+            display: none;
+          }
+          .experience > div {
+            margin-top: auto;
+          }
+
+          .personalBG {
+            padding: 1em;
+            grid-column: 2/3;
+          }
+          .personalBG > div {
+            grid-template-columns: 1fr;
+            width: auto;
+          }
+
+          .personalBG h1::before {
+            content: "";
+          }
+
+          .personalBG h1::after {
+            content: "";
+          }
+
+          .skills p {
+            width: auto;
+          }
+        }
+
         body {
           display: grid;
           grid-template-columns: 1fr 14.375em minmax(5em, 30em) 1fr;
@@ -82,12 +320,29 @@
           color: var(--light-text);
         }
 
+        *[role="button"] {
+          display: inline-block;
+          padding: 0.25em 1.5em;
+          border: 0.0625em solid var(--yellow);
+          color: var(--yellow);
+          font-size: 0.875em;
+          font-weight: 400;
+          border-radius: 1em;
+          background: initial;
+          text-transform: uppercase;
+          letter-spacing: initial;
+        }
+        *[role="button"]:hover {
+          background: var(--yellow);
+          color: var(--prim-color);
+        }
+
         /* LEFT SIDE --- Basic Info & Objective */
 
-        .objective h2::before,
-        .languages h2::before,
-        .interests h2::before {
-          content: ">> ";
+        .info {
+          grid-column: 2 / 3;
+          padding: 1.25em 0.625em;
+          display: initial;
         }
 
         .info > div {
@@ -96,21 +351,18 @@
           margin-right: auto;
         }
 
-        .info > div h2 {
+        .info div h2 {
           margin: 1.875em 0 0.3125em;
         }
 
-        .info > div p {
+        .info div p {
           font-size: 0.75em;
           line-height: 1.5em;
           margin: 0;
         }
 
-        .info {
-          background: var(--prim-color);
-          grid-column: 2 / 3;
-          padding: 1.25em 0.625em;
-          color: var(--dark-text);
+        .info .occupation {
+          margin: 0.3125em 0 0;
         }
 
         .info .basic {
@@ -121,49 +373,16 @@
           margin: auto;
         }
 
-        .basic img {
-          display: block;
-          max-width: 5.625em;
-          max-height: 5.625em;
-          min-width: 25%;
-          min-height: 25%;
+        .photo-wrap {
+          width: 5.625em;
+          height: 5.625em;
           border-radius: 5.625em;
           margin: 0 auto;
         }
 
-        .name {
-          text-transform: uppercase;
-          word-spacing: -0.4em;
-          font-weight: 300;
-          letter-spacing: 0.123em;
-          margin: 0.625em auto 0;
-          text-align: center;
-          font-size: 1.5em;
-        }
-
-        .thin {
-          font-weight: 300;
-        }
-
-        .firstName {
-          font-weight: 700;
-        }
-
-        .info > div h2.occupation {
-          margin: 0.3125em 0 0;
-          color: #fcfcfc;
-          font-size: 1em;
-          text-transform: uppercase;
-          word-spacing: -0.3em;
-          font-weight: 500;
-          letter-spacing: 0.12em;
-        }
-
-        .contact a,
-        .contact a:visited {
-          color: var(--dark-text);
-          display: block;
-          margin: 0.1875em 0 0;
+        .photo-wrap img {
+          height: 100%;
+          width: 100%;
         }
 
         .large {
@@ -173,18 +392,10 @@
         .social-media {
           display: flex;
           justify-content: center;
-          align-items: center;
-          position: relative;
         }
 
         .social-media a img {
-          width: 1.5em;
-          height: 1.5em;
           margin: 0 0.75em;
-        }
-        .social-media a:hover img {
-          transform: rotate(180deg);
-          position: relative;
         }
 
         .objective {
@@ -378,7 +589,9 @@
   <body>
     <section class="info">
       <div class="basic">
-        <img src="profile.jpg" alt="Profile Photo" />
+        <span class="photo-wrap"
+          ><img src="profile.jpg" alt="Profile Photo"
+        /></span>
         <h1 class="name">
           <span class="firstName">Minh</span>
           <span class="lastName">Nguyen</span>
@@ -403,9 +616,9 @@
         <h2>Objective</h2>
         <p>
           Self-motivated Web Designer, experienced in both design and code,
-          seeking Front End Developer role. A strong focus on clean UX and
-          accessible responsive designs. Active in the web community, including
-          a contribution to Ghost blog platform on GitHub.
+          seeking Front End Developer role. A strong focus on clean, accessible,
+          and responsive UI/UX. Active in the web community, including a
+          contribution to Ghost blog platform on GitHub.
         </p>
       </div>
       <div class="languages">
