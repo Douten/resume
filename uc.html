@@ -31,15 +31,15 @@
         margin: 0;
         padding: 0;
       }
-      img{
+      img {
         width: 100%;
         height: 100%;
       }
 
       body {
-        font: 300 1.25em "Rubik", sans-serif;
+        font: 300 1em "Rubik", sans-serif;
       }
-      
+
       li {
         list-style-type: none;
         font-size: 0.75em;
@@ -69,11 +69,12 @@
         color: var(--prim-color);
       }
 
-      a, a:visited {
+      a,
+      a:visited {
         text-decoration: none;
       }
 
-      @media screen and (min-width: 401px) {
+      @media screen and (min-width: 415px) {
         body {
           display: grid;
           grid-template-columns: 1fr 14.375em minmax(5em, 30em) 1fr;
@@ -157,7 +158,7 @@
           font-weight: 500;
           letter-spacing: 0.12em;
         }
-        
+
         .contact a,
         .contact a:visited {
           color: var(--dark-text);
@@ -262,9 +263,9 @@
         }
 
         /* SIDE LINE GRAPHIC FOR EXPERIENCE */
-        .history-line{
+        .history-line {
           grid-column: 1/2;
-          border-left: .1875em solid var(--sec-color);
+          border-left: 0.1875em solid var(--sec-color);
           height: 98%;
           width: 0;
           top: 9%;
@@ -272,51 +273,50 @@
           position: absolute;
           display: block;
         }
-        .experience > div::before{
-          content: '';
+        .experience > div::before {
+          content: "";
           display: block;
-          width: .75em;
-          height: .75em;
+          width: 0.75em;
+          height: 0.75em;
           margin: 0;
           padding: 0;
           background: var(--sec-color);
-          border-radius: .75em;
+          border-radius: 0.75em;
           position: relative;
           top: 1.75em;
           left: -1.625em;
           z-index: 1;
         }
-        .experience > div:first-of-type::before{
-          box-shadow: #eee 0 -.70em 0;
+        .experience > div:first-of-type::before {
+          box-shadow: #eee 0 -0.7em 0;
         }
-        .experience > div:last-of-type::before{
-          box-shadow: #eee 0 .70em 0;
+        .experience > div:last-of-type::before {
+          box-shadow: #eee 0 0.7em 0;
         }
 
-        .experience > div{
-          margin-top: -.75em;
+        .experience > div {
+          margin-top: -0.75em;
           position: relative;
         }
 
-        .skills li{
+        .skills li {
           font-size: 1em;
           display: flex;
           flex-wrap: wrap;
         }
-        .skills h3{
+        .skills h3 {
           font-size: 1em;
           font-weight: 500;
           width: 3.45em;
           text-align: right;
         }
-        .skills p{
-          word-spacing: .625em;
+        .skills p {
+          word-spacing: 0.625em;
           margin: 0 0 0 1.25em;
           font-size: 1em;
           line-height: 2em;
           width: 16em;
         }
-        
 
         @media screen and (max-width: 600px) {
           body {
@@ -331,19 +331,20 @@
             margin-left: 1em;
             width: auto;
           }
-          
-          .info > div p, li{
-            font-size: .875em;
+
+          .info > div p,
+          li {
+            font-size: 0.875em;
           }
 
           div.basic {
             text-align: center;
           }
 
-          .history-line{
-            display:none;
+          .history-line {
+            display: none;
           }
-          .experience > div::before{
+          .experience > div::before {
             display: none;
           }
           .experience > div {
@@ -359,15 +360,15 @@
             width: auto;
           }
 
-          .personalBG h1::before{
-            content: '';
+          .personalBG h1::before {
+            content: "";
           }
 
-          .personalBG h1::after{
-            content: '';
+          .personalBG h1::after {
+            content: "";
           }
 
-          .skills p{
+          .skills p {
             width: auto;
           }
         }
@@ -439,9 +440,9 @@
           <p>
             Design and implement graphic and web designs for over 30 clients.
             Projects are from a variety of industries, including motor and
-            fashion. Graphic works include social media and business ads. Web work
-            include Wordpress customization and Mailchimp custom templates. 5/5
-            star ratings from client feedback.
+            fashion. Graphic works include social media and business ads. Web
+            work include Wordpress customization and Mailchimp custom templates.
+            5/5 star ratings from client feedback.
           </p>
         </div>
         <div>
@@ -450,10 +451,10 @@
           <h3 class="time">2010 - 2013</h3>
           <p>
             Research, designed, developed websites and marketing assets.
-            Communicated with clients and collaborated with agencies. Worked with
-            social media from design to creating e-newsletters. Recreated old
-            sites to current modern standards. Was recognized for extra efforts
-            put in a project.
+            Communicated with clients and collaborated with agencies. Recreated
+            old sites to current modern standards. Responsible for creating
+            e-newsletter and greeting e-mails for Web Resource itself. Was
+            recognized for extra efforts put in a project.
           </p>
         </div>
       </div>
@@ -477,23 +478,16 @@
             <li>
               <h3>5 yrs+</h3>
               <p>
-              HTML
-              CSS
-              Javascript
-              Photoshop</p>
+                HTML CSS Javascript Photoshop
+              </p>
             </li>
             <li>
               <h3>2 yrs+</h3>
-              <p>Bootstrap
-              Jquery
-              Responsive Design
-              Web Accessibility</p>
+              <p>Bootstrap Jquery Responsive Design Web Accessibility</p>
             </li>
             <li>
               <h3>1 yr+</h3>
-              <p>Bulma
-              VUE
-              Adobe XD</p>
+              <p>Bulma VUE Adobe XD</p>
             </li>
           </ul>
         </div>
