@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Minh Nguyen</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --prim-color: #ef476f;
+        --sec-color: #06d6a0;
+        --blue: #26547c;
+        --yellow: #fff475;
+        --dark-text: #303030;
+        --light-text: #3a3a3a;
+      }
+      * {
+        transition: 0.2s;
+      }
+
+      body,
+      ul,
+      li,
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font: 300 1.25em "Rubik", sans-serif;
+      }
+
+      li {
+        list-style-type: none;
+        font-size: 0.75em;
+        line-height: 2em;
+      }
+
+      h1 {
+        font-size: 1.5em;
+      }
+      h2 {
+        font-size: 1em;
+        font-weight: 500;
+      }
+
+      *[role="button"] {
+        display: inline-block;
+        padding: 0.25em 1.5em;
+        border: 0.0625em solid var(--yellow);
+        color: var(--yellow);
+        font-size: 0.875em;
+        font-weight: 400;
+        border-radius: 1em;
+        text-transform: uppercase;
+      }
+      *[role="button"]:hover {
+        background: var(--yellow);
+        color: var(--prim-color);
+      }
+
+      a, a:visited {
+        text-decoration: none;
+      }
+
+      @media screen and (min-width: 401px) {
+        body {
+          display: grid;
+          grid-template-columns: 1fr 14.375em minmax(5em, 30em) 1fr;
+          grid-template-rows: min-content min-content;
+          color: var(--light-text);
+        }
+
+        /* LEFT SIDE --- Basic Info & Objective */
+
+        .objective h2::before,
+        .languages h2::before,
+        .interests h2::before {
+          content: ">> ";
+        }
+
+        .info > div {
+          width: 11.25em;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .info > div h2 {
+          margin: 1.875em 0 0.3125em;
+        }
+
+        .info > div p {
+          font-size: 0.75em;
+          line-height: 1.5em;
+          margin: 0;
+        }
+
+        .info {
+          background: var(--prim-color);
+          grid-column: 2 / 3;
+          padding: 1.25em 0.625em;
+          color: var(--dark-text);
+        }
+
+        .info .basic {
+          padding: 0.7em;
+          display: flex;
+          flex-direction: column;
+          width: initial;
+          margin: auto;
+        }
+
+        .basic img {
+          display: block;
+          max-width: 5.625em;
+          max-height: 5.625em;
+          min-width: 25%;
+          min-height: 25%;
+          border-radius: 5.625em;
+          margin: 0 auto;
+        }
+
+        .name {
+          text-transform: uppercase;
+          word-spacing: -0.4em;
+          font-weight: 300;
+          letter-spacing: 0.123em;
+          margin: 0.625em auto 0;
+          text-align: center;
+          font-size: 1.5em;
+        }
+
+        .thin {
+          font-weight: 300;
+        }
+
+        .firstName {
+          font-weight: 700;
+        }
+
+        .info > div h2.occupation {
+          margin: 0.3125em 0 0;
+          color: #fcfcfc;
+          font-size: 1em;
+          text-transform: uppercase;
+          word-spacing: -0.3em;
+          font-weight: 500;
+          letter-spacing: 0.12em;
+        }
+        
+        .contact a,
+        .contact a:visited {
+          color: var(--dark-text);
+          display: block;
+          margin: 0.1875em 0 0;
+        }
+
+        .large {
+          margin: 0.9375rem auto 0;
+        }
+
+        .social-media {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+        }
+
+        .social-media a img {
+          width: 1.5em;
+          height: 1.5em;
+          margin: 0 0.75em;
+        }
+        .social-media a:hover img {
+          transform: rotate(180deg);
+          position: relative;
+        }
+
+        .objective {
+          margin-top: 1.5625em;
+          border-top: 0.0625em solid var(--dark-text);
+        }
+
+        .languages span {
+          font-weight: 500;
+        }
+
+        .interests ul {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .interests li {
+          font-size: 1em;
+        }
+
+        /* RIGHT SIDE --- Personal background */
+
+        .personalBG {
+          background: #eee;
+          grid-column: 3 / 4;
+          padding: 0.3125em 2.25em;
+        }
+
+        .personalBG > div {
+          display: grid;
+          grid-template-columns: minmax(1em, 3.75em) minmax(10em, 21.875em) 1fr;
+        }
+
+        .personalBG h1 {
+          font-size: 1.375em;
+          text-transform: uppercase;
+          color: var(--prim-color);
+          margin: 0.9090909em 0 0 0;
+          grid-column: 1/3;
+        }
+        .personalBG :not(h1) {
+          grid-column: 2/3;
+        }
+
+        .personalBG h1::before {
+          content: "< ";
+          color: var(--sec-color);
+        }
+        .personalBG h1::after {
+          content: " >";
+          color: var(--sec-color);
+        }
+
+        .personalBG h2 {
+          font-size: 1.25em;
+          color: var(--blue);
+          margin-top: 0.5em;
+        }
+        .personalBG h2,
+        .personalBG > div > h3:first-of-type {
+          font-weight: 500;
+        }
+        .personalBG h3 {
+          font-size: 1em;
+          font-weight: 300;
+          margin-top: 0.125em;
+        }
+        .personalBG h3:last-of-type {
+          text-transform: uppercase;
+        }
+
+        .personalBG p {
+          font-size: 0.875em;
+          line-height: 1.5em;
+          margin: 0.35714286em auto 0; /* 5/14 */
+        }
+
+
+        .skills li{
+          font-size: 1em;
+          display: flex;
+          flex-wrap: wrap;
+        }
+        .skills h3{
+          font-size: 1em;
+          font-weight: 500;
+          width: 3.45em;
+          text-align: right;
+        }
+        .skills p{
+          word-spacing: .625em;
+          margin: 0 0 0 1.25em;
+          font-size: 1em;
+          line-height: 2em;
+          width: 16em;
+        }
+        
+
+        @media screen and (max-width: 600px) {
+          body {
+            grid-template-columns: minmax(5em, 1fr) minmax(5em, 1fr);
+            font-size: 1em !important;
+          }
+          .info {
+            grid-column: 1/2;
+          }
+          .info > div {
+            margin-right: 1em;
+            margin-left: 1em;
+            width: auto;
+          }
+          .personalBG {
+            padding: 1em;
+            grid-column: 2/3;
+          }
+          .personalBG > div {
+            grid-template-columns: 1fr;
+            width: auto;
+          }
+
+          .skills p{
+            width: auto;
+          }
+
+          div.basic {
+            text-align: center;
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="info">
+      <div class="basic">
+        <img src="profile.jpg" alt="Profile Photo" />
+        <h1 class="name">
+          <span class="firstName">Minh</span>
+          <span class="lastName">Nguyen</span>
+        </h1>
+        <h2 class="occupation"><span class="thin">Web</span> Designer</h2>
+        <div class="contact">
+          <a href="tel:4077170406">407 717 0406</a>
+          <a href="mailto:minh.n@me.com">minh.n@me.com</a>
+        </div>
+        <a href="https://minhn.me" class="large" role="button">Portfolio</a>
+      </div>
+      <div class="social-media">
+        <a href="" class="github"><img src="github.svg" alt="GitHub Icon"/></a>
+        <a href="" class="twitter"
+          ><img src="twitter.svg" alt="Twitter Icon"
+        /></a>
+        <a href="" class="linkedIn"
+          ><img src="linkedin.svg" alt="LinkedIn Icon"
+        /></a>
+      </div>
+      <div class="objective">
+        <h2>Objective</h2>
+        <p>
+          Self-motivated Web Designer, experienced in both design and code,
+          seeking Front End Developer role. A strong focus on clean UX and
+          accessible responsive designs. Active in the web community, including
+          a contribution to Ghost blog platform on GitHub.
+        </p>
+      </div>
+      <div class="languages">
+        <h2>Languages</h2>
+        <ul>
+          <li><span>English</span> Fluent</li>
+          <li><span>Vietnamese</span> Proficient</li>
+          <li><span>Japanese</span> Conversational</li>
+        </ul>
+      </div>
+      <div class="interests">
+        <h2>Interests</h2>
+        <ul>
+          <li><span>📖</span></li>
+          <li><span>🎼</span></li>
+          <li><span>🏕</span></li>
+          <li><span>✈</span></li>
+          <li><span>🍳</span></li>
+          <li><span>🎨</span></li>
+          <li><span>🎮</span></li>
+        </ul>
+      </div>
+    </section>
+    <section class="personalBG">
+      <div class="experience">
+        <h1>Experience</h1>
+        <h2 class="title">Freelance Web Designer</h2>
+        <h3 class="company">Upwork</h3>
+        <h3 class="time">2013 - Present</h3>
+        <p>
+          Design and implement graphic and web designs for over 30 clients.
+          Projects are from a variety of industries, including motor and
+          fashion. Graphic works include social media and business ads. Web work
+          include Wordpress customization and Mailchimp custom templates. 5/5
+          star ratings from client feedback.
+        </p>
+        <h2 class="title">Web Designer</h2>
+        <h3 class="company">Web Resources</h3>
+        <h3 class="time">2010 - 2013</h3>
+        <p>
+          Research, designed, developed websites and marketing assets.
+          Communicated with clients and collaborated with agencies. Worked with
+          social media from design to creating e-newsletters. Recreated old
+          sites to current modern standards. Was recognized for extra efforts
+          put in a project.
+        </p>
+      </div>
+      <div class="education">
+        <h1>Education</h1>
+        <h2 class="degree">Digital Media: Web Design</h2>
+        <h3 class="uni">University of Central Florida</h3>
+        <h3 class="grad-date">May 2018</h3>
+        <p>
+          Courses included Rapid Application Web Development, User-Centered
+          Design, Media for e-Commerce, Intermediate Computer Graphic Design.
+          Projects selected as showcase for class.
+        </p>
+      </div>
+      <div class="skills">
+        <h1>Skills</h1>
+        <ul>
+          <li>
+            <h3>5 yrs+</h3>
+            <p>
+            HTML
+            CSS
+            Javascript
+            Photoshop</p>
+          </li>
+          <li>
+            <h3>2 yrs+</h3>
+            <p>Bootstrap
+            Jquery
+            Responsive Design
+            Web Accessibility</p>
+          </li>
+          <li>
+            <h3>1 yr+</h3>
+            <p>Bulma
+            VUE
+            Adobe XD</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </body>
+</html>
