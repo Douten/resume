@@ -1,8 +1,8 @@
-# resume
-personal resume repository
+# personal resume
 
-### Designed in XD | (will) code in VS
+### [minhresu.me](https://minhresu.me)
 
-Right now only a [pdf](https://douten.github.io/resume/minh-nguyen-resume.pdf) lives here, for quick use, but! the site will come.
+**Designed in XD | (will) code in VS**
 
-Please look forward to it 🙇‍♂️
+Freshly out of the oven 🥧 will have to go over css to make it better.
+Try resizing. Also view on your mobile in vertical then horizontal :)
