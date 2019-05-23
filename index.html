@@ -100,7 +100,7 @@
         background: #121212;
       }
       .dark .social-media img {
-        filter: brightness(2.3);
+        background: #8d8d8d;
       }
       .dark .personalBG {
         background: #121212;
@@ -915,6 +915,9 @@
     <script>
       let mode = "light";
       let size = "small";
+      const twitter = document.querySelector(".twitter img");
+      const github = document.querySelector(".github img");
+      const linkedIn = document.querySelector(".linkedIn img");
       function lightSwitch() {
         if (mode == "light") {
           document.body.classList.add("dark");
@@ -931,6 +934,9 @@
           );
           document.body.style.setProperty("--grey-bg", "#202020");
           document.body.style.setProperty("--light-grey-bg", "#202020");
+          twitter.src = "twitter-dark.svg";
+          github.src = "github-dark.svg";
+          linkedIn.src = "linkedin-dark.svg";
           mode = "dark";
           switchMode.textContent = "🌞";
         } else {
@@ -943,6 +949,9 @@
           document.body.style.setProperty("--light-text", "#3a3a3a");
           document.body.style.setProperty("--grey-bg", "#eee");
           document.body.style.setProperty("--light-grey-bg", "#fcfcfc");
+          twitter.src = "twitter.svg";
+          github.src = "github.svg";
+          linkedIn.src = "linkedin.svg";
           mode = "light";
           switchMode.textContent = "🌑";
         }
