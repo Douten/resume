@@ -23,8 +23,8 @@
       }
       * {
         transition: 0.2s;
-        transition-property: width, height, margin, padding, color,
-          border-radius, border;
+        transition-property: width, height, margin, padding, border-radius,
+          border;
       }
 
       body,
@@ -96,22 +96,23 @@
       /* ======================================= */
       /* ============== DARK MODE ============== */
       /* ======================================= */
-      body.dark{
+      body.dark {
         background: #121212;
       }
-      .dark .social-media img{
+      .dark .social-media img {
         filter: brightness(2.3);
       }
-      .dark .personalBG{
+      .dark .personalBG {
         background: #121212;
       }
-      .dark a.large, .dark a.large:hover {
+      .dark a.large,
+      .dark a.large:hover {
         color: var(--prim-color);
       }
       .dark a.large:hover {
-        letter-spacing: .18em;
+        letter-spacing: 0.18em;
       }
-      .dark .experience h1{
+      .dark .experience h1 {
         margin-top: 0;
       }
 
@@ -126,7 +127,7 @@
         grid-template-columns: 1fr 1fr;
       }
 
-      .info{
+      .info {
         position: sticky;
         position: -webkit-sticky;
         top: 0;
@@ -264,7 +265,7 @@
 
       /* work history */
 
-      .personalBG{
+      .personalBG {
         background: white;
         z-index: 1;
         position: relative;
@@ -390,21 +391,25 @@
         word-spacing: 1em;
       }
 
-      .personalBG .tools{
-          position: absolute;
-          right: 1em;
-          bottom: 1em;
-          z-index: 1;
-          display: inline-block;
-        }
+      .personalBG .tools {
+        position: absolute;
+        right: 1em;
+        bottom: 1em;
+        z-index: 1;
+        display: inline-block;
+      }
 
-      .tools button{
+      .tools button {
         font-size: 1em;
         margin: 0;
         padding: 0;
         border: 0;
         cursor: pointer;
         background: none;
+      }
+
+      .switch-size {
+        color: var(--dark-text);
       }
 
       /* ======================================= */
@@ -475,16 +480,17 @@
           content: none;
         }
         /* dark mode overrides */
-        .dark .personalBG{
+        .dark .personalBG {
           background: var(--grey-bg);
         }
-        .dark a.large, .dark a.large:hover {
+        .dark a.large,
+        .dark a.large:hover {
           color: var(--yellow);
         }
         .dark a.large:hover {
           letter-spacing: initial;
         }
-        .dark .experience h1{
+        .dark .experience h1 {
           margin-top: 0.9090909em;
         }
 
@@ -541,7 +547,7 @@
 
         .info .occupation {
           margin: 0.3125em 0 0;
-          letter-spacing: .12em;
+          letter-spacing: 0.12em;
         }
 
         .info .basic {
@@ -708,9 +714,9 @@
           width: 16em;
         }
 
-        .personalBG .tools{
-          top: .25em;
-          right: .5em;
+        .personalBG .tools {
+          top: 0.25em;
+          right: 0.5em;
           bottom: unset;
         }
 
@@ -838,7 +844,10 @@
     </section>
     <section class="personalBG">
       <div class="tools">
-          <button class="switch-size" name="size-switch">aA</button><button class="switch-mode" name="mode-switch" value="Dark Mode">🌑</button>
+        <button class="switch-size" name="size-switch">aA</button
+        ><button class="switch-mode" name="mode-switch" value="Dark Mode">
+          🌑
+        </button>
       </div>
       <div class="experience">
         <h1>Experience</h1>
@@ -923,7 +932,7 @@
           document.body.style.setProperty("--grey-bg", "#202020");
           document.body.style.setProperty("--light-grey-bg", "#202020");
           mode = "dark";
-          switchBtn.textContent = "🌞";
+          switchMode.textContent = "🌞";
         } else {
           document.body.classList.remove("dark");
           document.querySelector(".info").style.background =
@@ -935,24 +944,23 @@
           document.body.style.setProperty("--grey-bg", "#eee");
           document.body.style.setProperty("--light-grey-bg", "#fcfcfc");
           mode = "light";
-          switchBtn.textContent = "🌑";
+          switchMode.textContent = "🌑";
         }
       }
-      function fontSwitch(){
-        if (size == "small"){
+      function fontSwitch() {
+        if (size == "small") {
           document.body.style.fontSize = "1.25em";
           size = "large";
-        }else{
+        } else {
           document.body.style.fontSize = "1em";
           size = "small";
         }
       }
 
       const switchMode = document.querySelector(".switch-mode");
-      switchMode.addEventListener('click', lightSwitch);
+      switchMode.addEventListener("click", lightSwitch);
       const switchSize = document.querySelector(".switch-size");
-      switchSize.addEventListener('click', fontSwitch);
-
+      switchSize.addEventListener("click", fontSwitch);
     </script>
   </body>
 </html>
