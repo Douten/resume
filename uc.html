@@ -17,9 +17,14 @@
         --yellow: #fff475;
         --dark-text: #303030;
         --light-text: #3a3a3a;
+        --white-text: #fcfcfc;
+        --grey-bg: #eee;
+        --light-grey-bg: #fcfcfc;
       }
       * {
         transition: 0.2s;
+        transition-property: width, height, margin, padding, color,
+          border-radius, border;
       }
 
       body,
@@ -71,6 +76,22 @@
         content: ">> ";
       }
 
+      .personalBG h1 {
+        color: var(--prim-color);
+      }
+
+      .personalBG h2 {
+        color: var(--blue);
+      }
+
+      .thin {
+        font-weight: 300;
+      }
+
+      .firstName {
+        font-weight: 700;
+      }
+
       /* ======================================= */
       /* ========= SMALL SCREEN DESIGN ========= */
       /* ======================================= */
@@ -80,6 +101,13 @@
       .basic {
         display: grid;
         grid-template-columns: 1fr 1fr;
+      }
+
+      .info{
+        position: sticky;
+        position: -webkit-sticky;
+        top: 0;
+        z-index: -1;
       }
 
       .basic {
@@ -102,7 +130,8 @@
         transform: rotate(45deg);
         height: 3.8em;
         width: 3.8em;
-        left: -0.7em;
+        left: -0.35em;
+        top: 0.2em;
         position: relative;
       }
 
@@ -112,30 +141,23 @@
         font-weight: 300;
         letter-spacing: 0.123em;
         margin: 0.625em auto 0;
-        padding-right: 2.3em;
+        padding-right: 2.8em;
         text-align: center;
         font-size: 1.5em;
         grid-column: 1/3;
       }
 
-      .thin {
-        font-weight: 300;
-      }
-
-      .firstName {
-        font-weight: 700;
-      }
-
       .occupation {
-        color: #fcfcfc;
+        color: var(--white-text);
         font-size: 1em;
         text-transform: uppercase;
         word-spacing: -0.3em;
         font-weight: 500;
-        letter-spacing: 0.12em;
+        letter-spacing: 0.18em;
         margin: 0 auto;
-        padding-left: 8.35em;
+        padding-left: 5.25em;
         grid-column: 1/3;
+        width: 3em;
       }
 
       /* portfolio button */
@@ -148,7 +170,7 @@
         font-weight: 400;
         letter-spacing: 0.04em;
         text-transform: uppercase;
-        margin: 1.5625em 0 2.9375em 2.5em;
+        margin: 1.063em 0 3.138em 0.2em;
         grid-column: 2/3;
         grid-row: 4/5;
       }
@@ -159,7 +181,7 @@
       .contact {
         grid-column: 2/3;
         grid-row: 5/6;
-        margin-left: 2.5em;
+        margin-left: 1.1em;
       }
 
       .contact a,
@@ -171,7 +193,7 @@
 
       .social-media {
         grid-column: 2/3;
-        margin-left: 2.5em;
+        margin: 0 0 -1em 1.1em;
         min-width: 7.5em;
         position: relative;
         top: -4.8em;
@@ -181,34 +203,33 @@
         width: 1.5em;
         height: 1.5em;
         margin-right: 0.5em;
+        background: var(--dark-text);
+        border-radius: 1em;
       }
       .social-media a:hover img {
-        transform: rotate(180deg);
-        position: relative;
+        border-radius: unset;
       }
 
       .objective {
         grid-column: 1/3;
         grid-row: 1/4;
-        max-width: 17.4em;
-        margin: 13.35em 0 -5em 3em;
+        margin: 10.95em 0 -5em -7.6em;
         font-size: 0.625em;
-      }
-      /* just cause I'm picky like that */
-      @media screen and (max-width: 350px) {
-        .objective {
-          margin-left: 1em;
-          max-width: 15em;
-        }
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
 
       .objective h2 {
         font-size: 1.6em;
+        width: 6.25em;
       }
 
       .objective p {
         margin-top: 0.66666em;
-        line-height: 1.5em;
+        line-height: 1em;
+        width: 10em;
       }
 
       .languages,
@@ -216,13 +237,140 @@
         display: none;
       }
 
+      /* work history */
+
+      .personalBG{
+        background: white;
+      }
+
+      .experience {
+        display: flex;
+        position: relative;
+        overflow-x: auto;
+        scrollbar-width: thin;
+        scroll-snap-points-x: repeat(100vw);
+        scroll-snap-destination: 0 0;
+        scroll-snap-type: x mandatory;
+        scroll-snap-type: mandatory;
+        -webkit-overflow-scrolling: touch;
+        background: var(--grey-bg);
+      }
+
+      .experience h1 {
+        font-size: 2.5em;
+        font-weight: 700;
+        text-transform: uppercase;
+        position: sticky;
+        position: -webkit-sticky;
+        left: 0;
+        text-align: center;
+        flex: 1 0 auto;
+        width: 100vw;
+        margin-top: -0.3em;
+      }
+
+      .experience div {
+        flex: 1 0 auto;
+        width: 100vw;
+        scroll-snap-align: start;
+        margin-top: 2em;
+        position: relative; /* for timeline graphic */
+        z-index: 2; /* needed to highlight because header overlay. */
+      }
+
+      .experience > :nth-child(2) {
+        margin-left: -100vw;
+      }
+
+      .experience h2,
+      .experience h3 {
+        text-align: center;
+        font-size: 1em;
+      }
+      .experience h2 {
+        font-size: 1.25em;
+      }
+      .experience h3.company {
+        font-weight: 400;
+      }
+      .experience h3.time {
+        font-weight: 300;
+      }
+
+      .experience p {
+        padding: 5vw 10vw;
+        font-size: 0.75em;
+        line-height: 1.5em;
+        text-align: justify;
+      }
+
+      .experience div::before {
+        content: "";
+        display: block;
+        width: 1em;
+        height: 1em;
+        background: var(--sec-color);
+        border-radius: 0.5em;
+        margin: 1.3em auto;
+      }
+
+      .experience > :nth-child(2)::after {
+        content: "";
+        border-top: 0.1875em solid var(--sec-color);
+        display: block;
+        width: 100vw;
+        position: absolute;
+        top: 1.7em;
+        left: 50%;
+      }
+
+      .education {
+        max-width: 12.25em;
+        min-height: 10.5em;
+        border: 0.625em solid var(--yellow);
+        padding: 1.5625em 3.25em;
+        margin: 2.375em auto;
+        background: var(--light-grey-bg);
+        box-shadow: inset 2px 2px rgba(0, 0, 0, 0.2), inset -2px -2px #fff;
+      }
+
+      .education h1 {
+        font-size: 1.25em;
+      }
+
+      .education h2,
+      .education h3 {
+        font-size: 0.8125em;
+        font-weight: 500;
+      }
+
+      .education h3.grad-date {
+        font-weight: 300;
+      }
+
+      .education p {
+        font-size: 0.75em;
+        line-height: 1em;
+      }
+
+      .skills {
+        background: var(--grey-bg);
+        margin-top: 1.5em;
+        padding: 10vw 10vw;
+      }
+
+      .skills p {
+        margin-top: 0;
+        word-spacing: 1em;
+      }
+
       /* ======================================= */
       /* ========== BIG SCREEN DESIGN ========== */
       /* ======================================= */
 
       @media screen and (min-width: 415px) {
-
         /* reset style from small screen */
+        /* box model reset */
         .name,
         .occupation,
         .photo-wrap,
@@ -231,27 +379,56 @@
         .contact a,
         .contact a:visited,
         .social-media,
-        .objective {
+        .objective,
+        .objective h2,
+        .objective p,
+        .experience h1,
+        .experience div,
+        .experience p,
+        .education,
+        .skills {
           padding: initial;
           transform: unset;
           position: initial;
           float: initial;
-        }
-        .languages,
-        .interests {
-          display: block;
+          background: none;
+          width: initial;
+          height: initial;
+          max-width: initial;
+          min-height: initial;
         }
         .contact,
-        .social-media {
+        .social-media,
+        .objective,
+        .experience div,
+        .experience h1,
+        .experience h2,
+        .experience > :nth-child(2),
+        .education,
+        .skills {
           margin: initial;
         }
+        .languages,
+        .interests,
+        .experience,
         .objective {
-          width: initial;
-          font-size: initial;
-          margin: initial;
+          display: block;
         }
-        .objective h2 {
-          font-size: 1em;
+        /* text & misc reset */
+        .objective,
+        .objective h2,
+        .experience h1,
+        .experience h2,
+        .experience h3,
+        .experience p,
+        .education {
+          font-size: initial;
+          text-align: initial;
+          border: 0;
+          box-shadow: unset;
+        }
+        .experience > :nth-child(2)::after {
+          content: none;
         }
 
         /* ======================================= */
@@ -277,7 +454,7 @@
             font-size: 0.875em;
           }
 
-          div.basic{
+          div.basic {
             text-align: center;
           }
 
@@ -287,7 +464,9 @@
           .experience > div::before {
             display: none;
           }
-          .experience > div {
+          .experience > div,
+          .personalBG .experience > :nth-child(2) {
+            /* specificity :/ */
             margin-top: auto;
           }
 
@@ -312,6 +491,10 @@
             width: auto;
           }
         }
+
+        /* ======================================= */
+        /* =========== REMAINING WIDTH =========== */
+        /* ======================================= */
 
         body {
           display: grid;
@@ -419,9 +602,9 @@
         /* RIGHT SIDE --- Personal background */
 
         .personalBG {
-          background: #eee;
+          background: var(--grey-bg);
           grid-column: 3 / 4;
-          padding: 0.3125em 2.25em;
+          padding: 0.3125em 2.25em 2em;
         }
 
         .personalBG > div {
@@ -432,7 +615,6 @@
         .personalBG h1 {
           font-size: 1.375em;
           text-transform: uppercase;
-          color: var(--prim-color);
           margin: 0.9090909em 0 0 0;
           grid-column: 1/3;
         }
@@ -451,7 +633,6 @@
 
         .personalBG h2 {
           font-size: 1.25em;
-          color: var(--blue);
           margin-top: 0.5em;
         }
         .personalBG h2,
@@ -499,13 +680,15 @@
           z-index: 1;
         }
         .experience > div:first-of-type::before {
-          box-shadow: #eee 0 -0.7em 0;
+          box-shadow: var(--grey-bg) 0 -0.7em 0;
         }
         .experience > div:last-of-type::before {
-          box-shadow: #eee 0 0.7em 0;
+          box-shadow: var(--grey-bg) 0 0.7em 0;
         }
 
-        .experience > div {
+        .experience > div,
+        .experience > :nth-child(2) {
+          /* unfortunately specificity ;/ */
           margin-top: -0.75em;
           position: relative;
         }
@@ -601,14 +784,21 @@
           <a href="tel:4077170406">407 717 0406</a>
           <a href="mailto:minh.n@me.com">minh.n@me.com</a>
         </div>
-        <a href="https://minhn.me" class="large" role="button">Portfolio</a>
+        <a href="https://minhn.me/design" class="large" role="button"
+          >Portfolio</a
+        >
       </div>
       <div class="social-media">
-        <a href="" class="github"><img src="github.svg" alt="GitHub Icon"/></a>
-        <a href="" class="twitter"
+        <a href="https://github.com/Douten" target="_blank" class="github"
+          ><img src="github.svg" alt="GitHub Icon"
+        /></a>
+        <a href="https://twitter.com/douten" target="_blank" class="twitter"
           ><img src="twitter.svg" alt="Twitter Icon"
         /></a>
-        <a href="" class="linkedIn"
+        <a
+          href="https://www.linkedin.com/in/minh-nguyen-4b8025187/"
+          target="_blank"
+          class="linkedIn"
           ><img src="linkedin.svg" alt="LinkedIn Icon"
         /></a>
       </div>
@@ -631,15 +821,17 @@
       </div>
       <div class="interests">
         <h2>Interests</h2>
-        <ul>
-          <li><span>📖</span></li>
-          <li><span>🎼</span></li>
-          <li><span>🏕</span></li>
-          <li><span>✈</span></li>
-          <li><span>🍳</span></li>
-          <li><span>🎨</span></li>
-          <li><span>🎮</span></li>
-        </ul>
+        <a href="https://minhn.me/about">
+          <ul>
+            <li><span role="img" aria-label="reading">📖</span></li>
+            <li><span role="img" aria-label="music">🎶</span></li>
+            <li><span role="img" aria-label="nature">🌄</span></li>
+            <li><span role="img" aria-label="travel">🛫</span></li>
+            <li><span role="img" aria-label="cooking">🍳</span></li>
+            <li><span role="img" aria-label="art">🎨</span></li>
+            <li><span role="img" aria-label="video games">🎮</span></li>
+          </ul>
+        </a>
       </div>
     </section>
     <section class="personalBG">
@@ -651,11 +843,11 @@
           <h3 class="company">Upwork</h3>
           <h3 class="time">2013 - Present</h3>
           <p>
-            Design and implement graphic and web designs for over 30 clients.
-            Projects are from a variety of industries, including motor and
-            fashion. Graphic works include social media and business ads. Web
-            work include Wordpress customization and Mailchimp custom templates.
-            5/5 star ratings from client feedback.
+            Various techinical and design tasks for over thirty clients.
+            Projects are from a variety of industries, such as motor and
+            fashion. Graphic works include ads for social media along with
+            coperate sites. Web work ranges from Wordpress customization to
+            Mailchimp custom templates. 5/5 star ratings from client feedback.
           </p>
         </div>
         <div>
@@ -663,11 +855,11 @@
           <h3 class="company">Web Resources</h3>
           <h3 class="time">2010 - 2013</h3>
           <p>
-            Research, designed, developed websites and marketing assets.
-            Communicated with clients and collaborated with agencies. Recreated
-            old sites to current modern standards. Responsible for creating
-            e-newsletter and greeting e-mails for Web Resource itself. Was
-            recognized for extra efforts put in a project.
+            Researched, designed, developed websites and marketing assets.
+            Communicated with clients plus collaborated with agencies.
+            Troubleshooted old sites and recreated others to current modern
+            standards. Promoted company through e-newsletter along with e-blast
+            designs. Was recognized for extra efforts put in a project.
           </p>
         </div>
       </div>
