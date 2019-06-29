@@ -6,13 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Minh Nguyen</title>
     <script>
-      !function(g,s,q,r,d){r=g[r]=g[r]||function(){(r.q=r.q||[]).push(
-      arguments)};d=s.createElement(q);q=s.getElementsByTagName(q)[0];
-      d.src='//d1l6p2sc9645hc.cloudfront.net/tracker.js';q.parentNode.
-      insertBefore(d,q)}(window,document,'script','_gs');
+      !(function(g, s, q, r, d) {
+        r = g[r] =
+          g[r] ||
+          function() {
+            (r.q = r.q || []).push(arguments);
+          };
+        d = s.createElement(q);
+        q = s.getElementsByTagName(q)[0];
+        d.src = '//d1l6p2sc9645hc.cloudfront.net/tracker.js';
+        q.parentNode.insertBefore(d, q);
+      })(window, document, 'script', '_gs');
 
       _gs('GSN-419827-M');
       _gs('set', 'anonymizeIP', true);
+      var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
+      if (isIE11 == true) {
+        window.location = '/minh-resume.pdf';
+      }
     </script>
     <link
       href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700&display=swap"
@@ -51,7 +62,7 @@
       }
 
       body {
-        font: 300 1em "Rubik", sans-serif;
+        font: 300 1em 'Rubik', sans-serif;
         color: var(--light-text);
       }
 
@@ -83,7 +94,7 @@
       .objective h2::before,
       .languages h2::before,
       .interests h2::before {
-        content: ">> ";
+        content: '>> ';
       }
 
       .personalBG h1 {
@@ -195,7 +206,7 @@
       }
 
       /* portfolio button */
-      *[role="button"] {
+      *[role='button'] {
         display: inline-block;
         padding: 0.406em 0.9em;
         color: var(--dark-text);
@@ -209,7 +220,7 @@
         grid-row: 4/5;
         z-index: 1;
       }
-      *[role="button"]:hover {
+      *[role='button']:hover {
         color: var(--prim-color);
       }
 
@@ -341,7 +352,7 @@
       }
 
       .experience div::before {
-        content: "";
+        content: '';
         display: block;
         width: 1em;
         height: 1em;
@@ -351,7 +362,7 @@
       }
 
       .experience > :nth-child(2)::after {
-        content: "";
+        content: '';
         border-top: 0.1875em solid var(--sec-color);
         display: block;
         width: 100vw;
@@ -367,7 +378,8 @@
         padding: 1.5625em 3.25em;
         margin: 2.375em auto;
         background: var(--light-grey-bg);
-        box-shadow: inset .125em .125em rgba(0, 0, 0, 0.2), inset -.125em -.125em #fff;
+        box-shadow: inset 0.125em 0.125em rgba(0, 0, 0, 0.2),
+          inset -0.125em -0.125em #fff;
       }
 
       .education h1 {
@@ -513,7 +525,7 @@
           grid-template-rows: min-content min-content;
         }
 
-        *[role="button"] {
+        *[role='button'] {
           display: inline-block;
           padding: 0.25em 1.5em;
           border: 0.0625em solid var(--yellow);
@@ -525,7 +537,7 @@
           text-transform: uppercase;
           letter-spacing: initial;
         }
-        *[role="button"]:hover {
+        *[role='button']:hover {
           background: var(--yellow);
           color: var(--prim-color);
         }
@@ -634,11 +646,11 @@
         }
 
         .personalBG h1::before {
-          content: "< ";
+          content: '< ';
           color: var(--sec-color);
         }
         .personalBG h1::after {
-          content: " >";
+          content: ' >';
           color: var(--sec-color);
         }
 
@@ -677,7 +689,7 @@
           display: block;
         }
         .experience > div::before {
-          content: "";
+          content: '';
           display: block;
           width: 0.75em;
           height: 0.75em;
@@ -758,7 +770,8 @@
           .experience > div::before {
             display: none;
           }
-          .experience > div, .experience > :nth-child(2) {
+          .experience > div,
+          .experience > :nth-child(2) {
             margin-top: initial;
           }
 
@@ -772,11 +785,11 @@
           }
 
           .personalBG h1::before {
-            content: "";
+            content: '';
           }
 
           .personalBG h1::after {
-            content: "";
+            content: '';
           }
 
           .skills p {
@@ -801,9 +814,7 @@
           <a href="tel:4077170406">407 717 0406</a>
           <a href="mailto:minh.n@me.com">minh.n@me.com</a>
         </div>
-        <a href="/portfolio.pdf" class="large" role="button"
-          >Portfolio</a
-        >
+        <a href="/portfolio.pdf" class="large" role="button">Portfolio</a>
       </div>
       <div class="social-media">
         <a href="https://github.com/Douten" target="_blank" class="github"
@@ -866,11 +877,11 @@
           <h3 class="company">Upwork</h3>
           <h3 class="time">2013 - Present</h3>
           <p>
-            Various technical and design tasks for over thirty clients.
-            Projects are from a variety of industries, such as motor and
-            fashion. Graphic works include ads for social media along with
-            cooperate sites. Web work ranges from Wordpress customization to
-            Mailchimp custom templates. 5/5 star ratings from client feedback.
+            Various technical and design tasks for over thirty clients. Projects
+            are from a variety of industries, such as motor and fashion. Graphic
+            works include ads for social media along with cooperate sites. Web
+            work ranges from Wordpress customization to Mailchimp custom
+            templates. 5/5 star ratings from client feedback.
           </p>
         </div>
         <div>
@@ -922,63 +933,63 @@
       </div>
     </section>
     <script>
-      let mode = "light";
-      let size = "small";
-      const twitter = document.querySelector(".twitter img");
-      const github = document.querySelector(".github img");
-      const linkedIn = document.querySelector(".linkedIn img");
+      let mode = 'light';
+      let size = 'small';
+      const twitter = document.querySelector('.twitter img');
+      const github = document.querySelector('.github img');
+      const linkedIn = document.querySelector('.linkedIn img');
       function lightSwitch() {
-        if (mode == "light") {
-          document.body.classList.add("dark");
-          document.querySelector(".info").style.background = "#24161A";
-          document.body.style.setProperty("--sec-color", "#A5FFD6");
-          document.body.style.setProperty("--blue", "#61829F");
+        if (mode == 'light') {
+          document.body.classList.add('dark');
+          document.querySelector('.info').style.background = '#24161A';
+          document.body.style.setProperty('--sec-color', '#A5FFD6');
+          document.body.style.setProperty('--blue', '#61829F');
           document.body.style.setProperty(
-            "--dark-text",
-            "rgba(255,255,255,.65)"
+            '--dark-text',
+            'rgba(255,255,255,.65)'
           );
           document.body.style.setProperty(
-            "--light-text",
-            "rgba(255,255,255,.65)"
+            '--light-text',
+            'rgba(255,255,255,.65)'
           );
-          document.body.style.setProperty("--grey-bg", "#202020");
-          document.body.style.setProperty("--light-grey-bg", "#202020");
-          twitter.src = "twitter-dark.svg";
-          github.src = "github-dark.svg";
-          linkedIn.src = "linkedin-dark.svg";
-          mode = "dark";
-          switchMode.textContent = "🌞";
+          document.body.style.setProperty('--grey-bg', '#202020');
+          document.body.style.setProperty('--light-grey-bg', '#202020');
+          twitter.src = 'twitter-dark.svg';
+          github.src = 'github-dark.svg';
+          linkedIn.src = 'linkedin-dark.svg';
+          mode = 'dark';
+          switchMode.textContent = '🌞';
         } else {
-          document.body.classList.remove("dark");
-          document.querySelector(".info").style.background =
-            "var(--prim-color)";
-          document.body.style.setProperty("--sec-color", "#06d6a0");
-          document.body.style.setProperty("--blue", "#26547c");
-          document.body.style.setProperty("--dark-text", "#303030");
-          document.body.style.setProperty("--light-text", "#3a3a3a");
-          document.body.style.setProperty("--grey-bg", "#eee");
-          document.body.style.setProperty("--light-grey-bg", "#fcfcfc");
-          twitter.src = "twitter.svg";
-          github.src = "github.svg";
-          linkedIn.src = "linkedin.svg";
-          mode = "light";
-          switchMode.textContent = "🌑";
+          document.body.classList.remove('dark');
+          document.querySelector('.info').style.background =
+            'var(--prim-color)';
+          document.body.style.setProperty('--sec-color', '#06d6a0');
+          document.body.style.setProperty('--blue', '#26547c');
+          document.body.style.setProperty('--dark-text', '#303030');
+          document.body.style.setProperty('--light-text', '#3a3a3a');
+          document.body.style.setProperty('--grey-bg', '#eee');
+          document.body.style.setProperty('--light-grey-bg', '#fcfcfc');
+          twitter.src = 'twitter.svg';
+          github.src = 'github.svg';
+          linkedIn.src = 'linkedin.svg';
+          mode = 'light';
+          switchMode.textContent = '🌑';
         }
       }
       function fontSwitch() {
-        if (size == "small") {
-          document.body.style.fontSize = "1.25em";
-          size = "large";
+        if (size == 'small') {
+          document.body.style.fontSize = '1.25em';
+          size = 'large';
         } else {
-          document.body.style.fontSize = "1em";
-          size = "small";
+          document.body.style.fontSize = '1em';
+          size = 'small';
         }
       }
 
-      const switchMode = document.querySelector(".switch-mode");
-      switchMode.addEventListener("click", lightSwitch);
-      const switchSize = document.querySelector(".switch-size");
-      switchSize.addEventListener("click", fontSwitch);
+      const switchMode = document.querySelector('.switch-mode');
+      switchMode.addEventListener('click', lightSwitch);
+      const switchSize = document.querySelector('.switch-size');
+      switchSize.addEventListener('click', fontSwitch);
     </script>
   </body>
 </html>
